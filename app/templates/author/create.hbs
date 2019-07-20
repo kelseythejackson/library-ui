@@ -13,15 +13,19 @@
     </div>
 
     <div class="slide-out-content">
-        <form>
+        <form onsubmit={{action "saveAuthor"}}>
             <div class="field">
-              <label for="">First Name: {{first}}</label>
+              <label for="">First Name:</label>
               {{input type="text" placeholder="Last Name" value=model.first}}
             </div>
 
             <div class="field">
-              <label for="">Last Name: {{last}}</label>
+              <label for="">Last Name:</label>
               {{input type="text" placeholder="Last Name" value=model.last}}
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="btn-submit">save</button>
             </div>
         </form>
     </div>
