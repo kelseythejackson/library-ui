@@ -1,5 +1,4 @@
 <div class="slide-out-bg"></div>
-
 <div class="slide-out">
   <div class="slide-out-card">
     {{#link-to "book.detail" model.id class="btn-back"}}
@@ -13,7 +12,7 @@
     </div>
 
     <div class="slide-out-content">
-        {{book-form book=model onsubmit=(action "saveBook")}}
+      {{book-form book=model onsubmit=(action "saveBook")}}
     </div>
   </div>
 </div>
