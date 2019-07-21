@@ -1,0 +1,18 @@
+<form onsubmit={{action "submitChanges"}}>
+  <div class="field">
+    <label for="">Your Full Name</label>
+    {{input value=user type="text" placeholder="name"}}
+  </div>
+
+  <div class="field">
+    <label for="">Write Your Review</label>
+    {{textarea value=body type="text" placeholder="name"}}
+  </div>
+
+  <div class="form-footer">
+    {{#link-to "book.detail" book.id class="btn-reset"}}
+      reset
+    {{/link-to}}
+    <button type="submit" class="btn-submit">save</button>
+  </div>
+</form>
