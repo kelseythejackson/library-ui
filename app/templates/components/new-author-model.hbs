@@ -1,29 +1,29 @@
 <button type="button" class="btn-trigger" onclick={{action (mut showModal) true}}>Add a New Author</button>
 {{#if showModal}}
-    <div class="modal">
+  <div class="modal">
     <form class="modal-card" onsubmit={{action "save"}}>
-        <h3 class="modal-heading">Add New Author For Book</h3>
+      <h3 class="modal-heading">Add New Author For Book</h3>
 
-        <div class="modal-content">
+      <div class="modal-content">
         <div class="field">
-            <label for="">First Name:</label>
-            {{input type="text" placeholder="First Name" value=author.first}}
+          <label for="">First Name:</label>
+          {{input type="text" placeholder="First Name" value=author.first}}
         </div>
         <div class="field">
-            <label for="">Last Name:</label>
-            {{input type="text" placeholder="Last Name" value=author.last}}
+          <label for="">Last Name:</label>
+          {{input type="text" placeholder="Last Name" value=author.last}}
         </div>
 
 
-        </div>
-        <div class="modal-footer">
+      </div>
+      <div class="modal-footer">
         <button type="button" class="btn-clear" onclick={{action (mut showModal) false}}>
-            Cancel
+          Cancel
         </button>
         <button type="submit" class="btn-submit">
-            Submit
+          Submit
         </button>
-        </div>
-    </form>
-    </div>
+      </div>
+  <  /form>
+  </div>
 {{/if}}

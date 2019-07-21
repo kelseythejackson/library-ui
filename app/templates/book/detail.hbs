@@ -3,7 +3,7 @@
 <div class="slide-out">
   <div class="slide-out-card">
     {{#link-to "book" class="btn-back"}}
-    <span class="sr-only">Back</span>
+      <span class="sr-only">Back</span>
     {{/link-to}}
 
     <div class="slide-out-heading">
@@ -11,7 +11,7 @@
         <h3>{{model.title}}</h3>
         <div class="actions">
           {{#link-to "book.edit" model.id class="btn-pop"}}
-          edit
+            edit
           {{/link-to}}
 
           <button class="btn-recessed" onclick={{action "destroy"}}>delete</button>
@@ -22,7 +22,7 @@
         <p>
           <strong>Author:</strong>
           {{#link-to "author.detail" model.author.id}}
-          {{model.author.last}}, {{model.author.first}}
+            {{model.author.last}}, {{model.author.first}}
           {{/link-to}}
 
         </p>
