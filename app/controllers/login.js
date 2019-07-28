@@ -12,7 +12,7 @@ export default Controller.extend({
       }).then(() => {
         this.transitionToRoute('index')
       }).catch((e) => {
-        this.set('errors', e.errors);
+        this.set('errors', e.json.errors);
       })
     }
   }
