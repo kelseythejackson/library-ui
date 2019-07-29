@@ -31,3 +31,9 @@
       {{/if}}
      
     </ul>
+
+    {{#if session.isAuthenticated}}
+      <div class="current-user">
+        Hello <strong>{{currentUser.user.username}}</strong>
+      </div>
+    {{/if}}
