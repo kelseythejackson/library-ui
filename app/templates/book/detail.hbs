@@ -10,11 +10,16 @@
       <div class="title">
         <h3>{{model.title}}</h3>
         <div class="actions">
-          {{#link-to "book.edit" model.id class="btn-pop"}}
+          {{#if (can "edit book" model)}}
+            {{#link-to "book.edit" model.id class="btn-pop"}}
             edit
           {{/link-to}}
+          {{/if}}
+          {{#if (can "delete book" model)}}
+            <button class="btn-recessed" onclick={{action "destroy"}}>delete</button>
+          {{/if}}
 
-          <button class="btn-recessed" onclick={{action "destroy"}}>delete</button>
+          
         </div>
 
       </div>
