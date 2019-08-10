@@ -2,10 +2,16 @@
 
 module.exports = function(environment) {
   let ENV = {
+    DS: {
+      host: 'http://localhost:3000'
+    },
     modulePrefix: 'library-ui',
     environment,
     rootURL: '/',
     locationType: 'auto',
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/]
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -22,7 +28,6 @@ module.exports = function(environment) {
       // when it is created
     },
     'ember-simple-auth-token': {
-      serverTokenEndpoint: 'http://localhost:3000/session',
       refreshAccessTokens: false
     }
   };
@@ -48,8 +53,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.DS.host = 'https://agile-beyond-16488.herokuapp.com';
+    ENV.fastboot.hostWhitelist = [ENV.DS.host, 'localhost:4200'];
   }
+  ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/session`;
 
   return ENV;
 };

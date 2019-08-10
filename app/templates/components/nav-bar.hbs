@@ -32,7 +32,7 @@
      
     </ul>
 
-    {{#if session.isAuthenticated}}
+    {{#if currentUser.user}}
       <div class="current-user">
         Hello <strong>{{currentUser.user.username}}</strong>
       </div>
