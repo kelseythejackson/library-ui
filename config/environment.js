@@ -53,8 +53,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'https://agile-beyond-16488.herokuapp.com';
-    ENV.fastboot.hostWhitelist = [ENV.DS.host, 'pacific-brushlands-55000.herokuapp.com'];
+    ENV.DS.host = process.env.API_HOST || 'https://agile-beyond-16488.herokuapp.com';
+    const clientHost = process.env.CLIENT_HOST || 'pacific-brushlands-55000.herokuapp.com';
+    ENV.fastboot.hostWhitelist = [ENV.DS.host, clientHost];
   }
   ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/session`;
 
