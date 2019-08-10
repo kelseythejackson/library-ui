@@ -54,7 +54,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.DS.host = 'https://agile-beyond-16488.herokuapp.com';
-    ENV.fastboot.hostWhitelist = [ENV.DS.host, 'evening-ridge-73343.herokuapp.com'];
+    ENV.fastboot.hostWhitelist = [ENV.DS.host, 'pacific-brushlands-55000.herokuapp.com'];
   }
   ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/session`;
 
